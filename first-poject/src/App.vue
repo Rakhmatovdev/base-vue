@@ -1,12 +1,33 @@
-<script >
-</script>
-
 <template>
-  <h1 >Hello world</h1>
+  <h3>{{ title }}</h3>
+  <p>{{ anons }}</p>
+  <button type="button" @click="userData()">Send</button>
 </template>
 
+<script>
+export default {
+  name: 'App',
+  data() {
+    return {
+      title: 'Title!',
+      anons: 'This is anons'
+    };
+  },
+  methods: {
+    userData(word='New word') {
+      this.title = 'New title';
+      this.anons = word;
+    }
+  }
+};
+</script>
+
 <style scoped>
-h1 {
-  color: red;
+h3 {
+  font-weight: lighter;
+}
+
+p {
+  color: red
 }
 </style>
